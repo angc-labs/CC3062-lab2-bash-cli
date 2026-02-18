@@ -1,0 +1,3 @@
+   Static hostname: (unset)
+Transient hostname: cc3062-10
+  Operating System: Ubuntu 24.04.4 LTS

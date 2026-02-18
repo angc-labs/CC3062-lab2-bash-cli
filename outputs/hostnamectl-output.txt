@@ -1,0 +1,15 @@
+   Static hostname: (unset)
+Transient hostname: cc3062-10
+         Icon name: computer-vm
+           Chassis: vm 🖴
+        Machine ID: b4710fe905d44ce681eeac332559ba9f
+           Boot ID: 9d2a1c84d94b46fcab9415e55afd83c7
+    Virtualization: google
+  Operating System: Ubuntu 24.04.4 LTS
+            Kernel: Linux 6.14.0-1021-gcp
+      Architecture: x86-64
+   Hardware Vendor: Google
+    Hardware Model: Google Compute Engine
+  Firmware Version: Google
+     Firmware Date: Sat 2025-10-25
+      Firmware Age: 3month 3w 3d

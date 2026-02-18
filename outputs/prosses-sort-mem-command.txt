@@ -1,0 +1,112 @@
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         127  0.0  2.8  75016 28032 ?        S<s  Jan30   6:38 /usr/lib/systemd/systemd-journald
+root         631  0.0  2.2 1997392 21972 ?       Ssl  Jan30   2:31 /usr/lib/snapd/snapd
+root         613  0.0  1.1  29408 11648 ?        Ss   Jan30   0:05 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root      289575  0.0  1.0  14472 10216 ?        Ss   Feb17   0:00 sshd: root@pts/1
+root      290905  0.0  1.0  14472 10204 ?        Ss   00:52   0:01 sshd: root@pts/3
+root      286050  0.0  1.0  14472  9848 ?        Ss   Feb17   0:01 sshd: root@pts/5
+root      285295  0.0  0.9  14472  9744 ?        Ss   Feb17   0:05 sshd: root@pts/2
+root           1  0.0  0.9  22576  9488 ?        Ss   Jan30   3:01 /usr/lib/systemd/systemd --system --deserialize=65
+root         744  0.0  0.9 107016  9420 ?        Ssl  Jan30   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root      283666  0.0  0.9  20172  9420 ?        Ss   Feb17   0:00 /usr/lib/systemd/systemd --user
+root         781  0.0  0.9 1834428 9240 ?        Ssl  Jan30   5:00 /usr/bin/google_guest_agent
+root         602  0.0  0.8 1765408 8744 ?        Ssl  Jan30   5:39 /usr/bin/google_osconfig_agent
+www-data  204539  0.0  0.6  12488  6564 ?        S    Feb13   0:10 nginx: worker process
+www-data  204538  0.0  0.6  12568  6476 ?        S    Feb13   0:09 nginx: worker process
+systemd+     300  0.0  0.5  21700  5320 ?        Ss   Jan30   0:06 /usr/lib/systemd/systemd-resolved
+root      291094  0.0  0.5   6068  5276 pts/3    S+   01:17   0:00 nano index.html
+root         976  0.0  0.4  17876  4448 ?        Ss   Jan30   0:10 /usr/lib/systemd/systemd-logind
+root      289611  0.0  0.4   5148  4392 pts/1    Ss+  Feb17   0:00 -bash
+root      290983  0.0  0.4   5148  4380 pts/3    Ss   00:52   0:00 -bash
+root      291096  100  0.4   8280  4216 pts/5    R+   01:18   0:00 ps aux --sort=-%mem
+systemd+     478  0.0  0.4  19424  4140 ?        Ss   Jan30   0:08 /usr/lib/systemd/systemd-networkd
+root      286130  0.0  0.3   5260  3572 pts/5    Ss   Feb17   0:00 -bash
+root        1906  0.0  0.3  12024  3552 ?        Ss   Jan30   2:21 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+root      285331  0.0  0.3   5272  3316 pts/2    Ss+  Feb17   0:00 -bash
+syslog       757  0.0  0.3 222140  3232 ?        Ssl  Jan30   1:18 /usr/sbin/rsyslogd -n -iNONE
+root      283667  0.0  0.3  20392  3000 ?        S    Feb17   0:00 (sd-pam)
+root         192  0.0  0.2  25408  2560 ?        Ss   Jan30   0:03 /usr/lib/systemd/systemd-udevd
+message+     592  0.0  0.2   8360  2356 ?        Ss   Jan30   0:12 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root      204536  0.0  0.2  11456  2132 ?        S    Feb13   0:00 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+_chrony      936  0.0  0.1  19400  1768 ?        S    Jan30   0:02 /usr/sbin/chronyd -F 1
+_chrony      937  0.0  0.0  11072   604 ?        S    Jan30   0:00 /usr/sbin/chronyd -F 1
+root         727  0.0  0.0   3160   144 ttyS0    Ss+  Jan30   0:00 /sbin/agetty -o -p -- \u --keep-baud 115200,57600,38400,9600 - vt220
+root         769  0.0  0.0   3116   140 tty1     Ss+  Jan30   0:00 /sbin/agetty -o -p -- \u --noclear - linux
+root           2  0.0  0.0      0     0 ?        S    Jan30   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    Jan30   0:00 [pool_workqueue_release]
+root           4  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-rcu_gp]
+root           5  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-sync_wq]
+root           6  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-kvfree_rcu_reclaim]
+root           7  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-slub_flushwq]
+root           8  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-netns]
+root          10  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/0:0H-events_highpri]
+root          13  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-mm_percpu_wq]
+root          14  0.0  0.0      0     0 ?        I    Jan30   0:00 [rcu_tasks_rude_kthread]
+root          15  0.0  0.0      0     0 ?        I    Jan30   0:00 [rcu_tasks_trace_kthread]
+root          16  0.0  0.0      0     0 ?        S    Jan30   0:02 [ksoftirqd/0]
+root          17  0.0  0.0      0     0 ?        I    Jan30   1:34 [rcu_sched]
+root          18  0.0  0.0      0     0 ?        S    Jan30   0:00 [rcu_exp_par_gp_kthread_worker/0]
+root          19  0.0  0.0      0     0 ?        S    Jan30   0:00 [rcu_exp_gp_kthread_worker]
+root          20  0.0  0.0      0     0 ?        S    Jan30   0:13 [migration/0]
+root          21  0.0  0.0      0     0 ?        S    Jan30   0:00 [idle_inject/0]
+root          22  0.0  0.0      0     0 ?        S    Jan30   0:00 [cpuhp/0]
+root          23  0.0  0.0      0     0 ?        S    Jan30   0:00 [cpuhp/1]
+root          24  0.0  0.0      0     0 ?        S    Jan30   0:00 [idle_inject/1]
+root          25  0.0  0.0      0     0 ?        S    Jan30   0:13 [migration/1]
+root          26  0.0  0.0      0     0 ?        S    Jan30   0:05 [ksoftirqd/1]
+root          28  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/1:0H-events_highpri]
+root          29  0.0  0.0      0     0 ?        S    Jan30   0:00 [kdevtmpfs]
+root          30  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-inet_frag_wq]
+root          31  0.0  0.0      0     0 ?        S    Jan30   0:00 [kauditd]
+root          32  0.0  0.0      0     0 ?        S    Jan30   0:01 [khungtaskd]
+root          34  0.0  0.0      0     0 ?        S    Jan30   0:00 [oom_reaper]
+root          36  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-writeback]
+root          37  0.0  0.0      0     0 ?        S    Jan30   1:27 [kcompactd0]
+root          38  0.0  0.0      0     0 ?        SN   Jan30   0:00 [ksmd]
+root          39  0.0  0.0      0     0 ?        SN   Jan30   0:00 [khugepaged]
+root          40  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-kintegrityd]
+root          41  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-kblockd]
+root          42  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-blkcg_punt_bio]
+root          43  0.0  0.0      0     0 ?        S    Jan30   0:00 [irq/9-acpi]
+root          45  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-tpm_dev_wq]
+root          46  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-ata_sff]
+root          47  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-md]
+root          48  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-md_bitmap]
+root          49  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-edac-poller]
+root          50  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-devfreq_wq]
+root          51  0.0  0.0      0     0 ?        S    Jan30   0:00 [watchdogd]
+root          52  0.0  0.0      0     0 ?        I<   Jan30   0:06 [kworker/0:1H-kblockd]
+root          53  0.0  0.0      0     0 ?        S    Jan30  15:35 [kswapd0]
+root          54  0.0  0.0      0     0 ?        S    Jan30   0:00 [ecryptfs-kthread]
+root          55  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-kthrotld]
+root          56  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-acpi_thermal_pm]
+root          57  0.0  0.0      0     0 ?        S    Jan30   3:45 [hwrng]
+root          58  0.0  0.0      0     0 ?        S    Jan30   0:00 [scsi_eh_0]
+root          59  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-scsi_tmf_0]
+root          60  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-nvme-wq]
+root          61  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-nvme-reset-wq]
+root          62  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-nvme-delete-wq]
+root          63  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-nvme-auth-wq]
+root          65  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-mld]
+root          66  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-ipv6_addrconf]
+root          73  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-kstrp]
+root          76  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/u9:0]
+root          89  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-charger_manager]
+root          90  0.0  0.0      0     0 ?        S    Jan30   0:15 [jbd2/sda1-8]
+root          91  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-ext4-rsv-conversion]
+root         194  0.0  0.0      0     0 ?        S    Jan30   0:00 [psimon]
+root         221  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-cryptd]
+root         228  0.0  0.0      0     0 ?        S    Jan30   0:00 [jbd2/sda16-8]
+root         229  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-ext4-rsv-conversion]
+root        1259  0.0  0.0      0     0 ?        I<   Jan30   0:00 [kworker/R-tls-strp]
+root      257820  0.0  0.0      0     0 ?        I<   Feb16   0:01 [kworker/1:2H-kblockd]
+root      283672  0.0  0.0      0     0 ?        S    Feb17   0:00 [psimon]
+root      285480  0.0  0.0      0     0 ?        I    Feb17   0:00 [kworker/u8:1-events_power_efficient]
+root      289327  0.0  0.0      0     0 ?        I    Feb17   0:01 [kworker/0:0-events_freezable]
+root      289894  0.0  0.0      0     0 ?        I    00:00   0:00 [kworker/1:1-events]
+root      290268  0.0  0.0      0     0 ?        S    00:09   0:00 [psimon]
+root      290311  0.0  0.0      0     0 ?        I    00:22   0:00 [kworker/1:0-cgroup_destroy]
+root      290313  0.0  0.0      0     0 ?        I    00:22   0:00 [kworker/u8:2-events_unbound]
+root      290339  0.0  0.0      0     0 ?        I    00:30   0:00 [kworker/u8:3-events_unbound]
+root      291011  0.0  0.0      0     0 ?        I    00:55   0:00 [kworker/0:1-cgroup_destroy]
+root      291083  0.0  0.0      0     0 ?        I    01:15   0:00 [kworker/u8:0-events_power_efficient]

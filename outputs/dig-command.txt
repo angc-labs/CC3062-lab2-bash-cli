@@ -1,0 +1,21 @@
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.2-Ubuntu <<>> uvg.edu.gt
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 19302
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;uvg.edu.gt.			IN	A
+
+;; ANSWER SECTION:
+uvg.edu.gt.		3585	IN	A	45.223.155.41
+uvg.edu.gt.		3585	IN	A	45.223.56.41
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Tue Feb 17 22:52:48 UTC 2026
+;; MSG SIZE  rcvd: 71
+
