@@ -1,5 +1,6 @@
 # Commands
 
+curl http://35.239.213.125/
 tail -15 /var/log/nginx/access.log > tail-command.txt
 ps aux | grep -i amazon
 dig uvg.edu.gt
