@@ -1,0 +1,291 @@
+??????????????????????????????????
+
+UNIVERSIDAD DEL VALLE DE GUATEMALA
+CC3062 SISTEMAS Y TECNOLOGIAS WEB
+SECCIÓN 10
+ANGEL GABRIEL CHAVEZ OTZOY
+24248
+
+??????????????????????????????????
+
+LABORATORIO 02:
+Administración de Servidores Linux
+
+??????????????????????????????????
+==================================
+
+(1) Utilizando curl, hagan una solicitud de HTTP al servidor
+
+COMANDO:
+curl http://35.239.213.125/
+
+OUTPUT:
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+...
+<h1>Welcome to prendan-el-server.online :)!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+...
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+
+==================================
+
+(2) Que pasa si tratan de hacer una
+solicitud de HTTP desde el servidor 
+hacia su computadora?
+
+El comando respondería una mensaje de error, 
+ya que mi computadora no tiene un servidor HTTP 
+accesible públicamente ni una ip pública. 
+
+El servidor remoto no puede alcanzar mi máquina 
+directamente a menos que tenga configuración adicional.
+
+==================================
+
+(3) Utilizando tail dentro del servidor, 
+obtengan las últimas 15 líneas del archivo 
+/var/log/nginx/access.log
+
+COMANDO:
+tail -15 /var/log/nginx/access.log
+
+OUTPUT:
+108.162.212.167 - - [17/Feb/2026:22:39:52 +0000] "GET /lab3/24737/casa/pistas.html HTTP/2.0" 304 0 "https://prendan-el-server.online/lab3/24737/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36 Edg/144.0.0.0"
+190.14.134.88 - - [17/Feb/2026:22:39:57 +0000] "GET /projects/lab3 HTTP/1.1" 404 134 "http://35.239.213.125/oscar_rompich/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+181.174.104.198 - - [17/Feb/2026:22:40:42 +0000] "GET /favicon.ico HTTP/1.1" 404 196 "http://35.239.213.125/lab3/24092/Lab-3-Web/index.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/145.0.0.0 Safari/537.36"
+... (15 líneas)
+
+==================================
+
+(4) Utilizando ps y grep identifiquen 
+qué procesos está corriendo amazon 
+dentro del servidor
+
+COMANDO:
+ps aux | grep -i amazon
+ps aux | grep -i google
+
+OUTPUT:
+root         602  0.0  0.8 1765408 8784 ?  Ssl  Jan30   5:38 /usr/bin/google_osconfig_agent
+root         781  0.0  1.8 1834428 17852 ?  Ssl  Jan30   4:59 /usr/bin/google_guest_agent
+
+==================================
+
+(5) Utilizando dig dentro del servidor, 
+obtengan la ip que resuelve al hacer 
+un dns lookup uvg.edu.gt
+
+COMANDO:
+dig uvg.edu.gt
+
+OUTPUT:
+;; ANSWER SECTION:
+uvg.edu.gt.		3585	IN	A	45.223.155.41
+uvg.edu.gt.		3585	IN	A	45.223.56.41
+
+IP que resuelve uvg.edu.gt: 45.223.155.41 y 45.223.56.41
+
+==================================
+
+(6) Cuanta memoria RAM, total usada y 
+libre, tiene el servidor? (su respuesta 
+debe estar en MB)
+
+COMANDO:
+free -m | grep Mem
+
+OUTPUT:
+Mem:             958         351         381           0         379         607
+
+- Total: 958 MB
+- Usada: 351 MB
+- Libre: 381 MB (disponible: 607 MB)
+
+==================================
+
+(7) Cuanta espacio de disco, total 
+usado y disponible, tiene el servidor? 
+(su respuesta debe estar en MB)
+
+COMANDO:
+df -m
+
+OUTPUT:
+Filesystem     1M-blocks  Used Available Use% Mounted on
+/dev/root           8854  4636      4203  53% /
+
+- Total: 8854 MB
+- Usado: 4636 MB
+- Disponible: 4203 MB
+
+==================================
+
+(8) Utilizando el comando ip obtengan 
+la ip del servidor
+
+COMANDO: 
+ip address show
+
+OUTPUT:
+inet 10.128.0.4/32 metric 100 scope global dynamic ens4
+
+IP del servidor: 10.128.0.4
+
+==================================
+
+(9) lsof lista los archivos abiertos. 
+Identifiquen los archivos abiertos por 
+el protocolo TCP en el puerto 80
+
+COMANDO:
+lsof -i TCP:80 -s TCP:LISTEN
+
+OUTPUT:
+COMMAND    PID     USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME
+nginx   204536     root    7u  IPv4 2863828      0t0  TCP *:http (LISTEN)
+nginx   204538 www-data    7u  IPv4 2863828      0t0  TCP *:http (LISTEN)
+nginx   204539 www-data    7u  IPv4 2863828      0t0  TCP *:http (LISTEN)
+
+Archivos abiertos por TCP puerto 80: nginx (PIDs 204536, 204538, 204539)
+
+==================================
+
+(10) Utilizando netstat, listen los 
+puertos por los que está escuchando 
+el servidor
+
+COMANDO:
+netstat -tulpn
+
+OUTPUT:
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN      204536/nginx: maste 
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      204536/nginx: maste 
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      1/systemd           
+tcp6       0      0 :::443                  :::*                    LISTEN      204536/nginx: maste 
+tcp6       0      0 :::80                   :::*                    LISTEN      204536/nginx: maste 
+tcp6       0      0 :::22                   :::*                    LISTEN      1/systemd           
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           936/chronyd         
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           300/systemd-resolve 
+udp        0      0 10.128.0.4:68           0.0.0.0:*                           478/systemd-network
+
+Puertos escuchando: 
+- 80 (nginx)
+- 443 (nginx)
+- 22 (sshd)
+- 53 (systemd-resolved)
+- 68 (systemd-network)
+- 323 (chronyd)
+
+==================================
+
+(11) Utilizando ss, listen los puertos 
+por los que está escuchando el servidor
+
+COMANDO:
+ss -tlnp | grep :80
+
+OUTPUT:
+LISTEN 0      511          0.0.0.0:80        0.0.0.0:*    users:(("nginx",pid=204539,fd=7),("nginx",pid=204538,fd=7),("nginx",pid=204536,fd=7))
+LISTEN 0      511             [::]:80           [::]:*    users:(("nginx",pid=204539,fd=8),("nginx",pid=204538,fd=8),("nginx",pid=204536,fd=8))
+
+Puertos TCP escuchando: 
+- 80 (nginx), 
+- 443 (nginx),
+- 22 (sshd)
+
+==================================
+
+(12) Utilizando hostnamectl, indiquen: 
+El hostname del servidor y El sistema operativo
+
+COMANDO:
+hostnamectl | grep "hostname" && hostnamectl | grep "System"
+
+OUTPUT:
+Transient hostname: cc3062-10
+Operating System: Ubuntu 24.04.4 LTS
+
+- Hostname: cc3062-10
+- Sistema Operativo: Ubuntu 24.04.4 LTS
+
+==================================
+
+(13) Utilizando ps, listen los procesos 
+ordenados por consumo de memoria
+
+COMANDO:
+ps aux --sort=-%mem
+
+OUTPUT:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         127  0.0  2.8  75016 28032 ?        S<s  Jan30   6:38 /usr/lib/systemd/systemd-journald
+root         631  0.0  2.2 1997392 21972 ?       Ssl  Jan30   2:31 /usr/lib/snapd/snapd
+root         613  0.0  1.1  29408 11648 ?        Ss   Jan30   0:05 /usr/bin/python3 /usr/bin/networkd-dispatcher
+root      289575  0.0  1.0  14472 10216 ?        Ss   Feb17   0:00 sshd: root@pts/1
+
+==================================
+
+(14) Utilizando grep, identifiquen 
+cuántas solicitudes HTTP 404 existen 
+en el access.log de nginx
+
+COMANDO:
+grep -c '404' /var/log/nginx/access.log
+
+OUTPUT:
+96
+
+Número de solicitudes 404: 96
+
+==================================
+
+(15) Determinen: 
+- Qué servicio está escuchando en el puerto 80
+- Qué proceso lo ejecuta
+- Cuánta memoria consume
+
+COMANDO 1: 
+ss -tlnp | grep :80
+
+OUTPUT:
+LISTEN 0 511 0.0.0.0:80 0.0.0.0:* users:(("nginx",pid=204539,fd=7),("nginx",pid=204538,fd=7),("nginx",pid=204536,fd=7))
+
+COMANDO 2: 
+lsof -i :80
+
+OUTPUT:
+COMMAND    PID     USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME
+nginx   204536     root    7u  IPv4 2863828      0t0  TCP *:http (LISTEN)
+nginx   204538 www-data    7u  IPv4 2863828      0t0  TCP *:http (LISTEN)
+nginx   204539 www-data    7u  IPv4 2863828      0t0  TCP *:http (LISTEN)
+
+COMANDO 3:
+ps -p 204536 -o pid,comm,%mem,rss
+ps -p 204538 -o pid,comm,%mem,rss
+ps -p 204539 -o pid,comm,%mem,rss
+
+Output:
+    PID COMMAND         %MEM   RSS
+ 204536 nginx            0.2  2132
+
+    PID COMMAND         %MEM   RSS
+ 204538 nginx            0.6  6476
+
+    PID COMMAND         %MEM   RSS
+ 204539 nginx            0.6  6564
+
+
+>  Servicio: nginx
+   Proceso: nginx (PID 204536 master, PIDs 204538 y 204539 workers)
+   Memoria:
+      - Master (204536): 0.2% / 2132 KB RSS
+      - Worker 1 (204538): 0.6% / 6476 KB RSS
+      - Worker 2 (204539): 0.6% / 6564 KB RSS
+  Total aproximado: 1.4% / ~15 MB RSS
